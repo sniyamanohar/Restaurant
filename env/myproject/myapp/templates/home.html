@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>kilua restaurnt</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+JP:wght@100;300;400;500&family=Playfair+Display:wght@400;500;600;700;800&family=Prata&family=Sora&display=swap" rel="stylesheet">
+      <style>
+        /*
+  ========================================
+  Style Reset START
+  ========================================
+*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol, ul {
+  list-style: none;
+}
+blockquote, q {
+  quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+/*
+  ========================================
+  Style Reset END
+  ========================================
+
+  ========================================
+  START CSS CODING . . . BEGIN!
+  ========================================
+
+  ========================================
+  GRID
+  ========================================
+*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+/*
+  ========================================
+  COLORS FONTS & BG'S
+  ========================================
+*/
+/* For big lettering ->font-family: 'Noto Sans TC', sans-serif;
+for the paragraphs --> font-family: 'Roboto', sans-serif;*/
+html{
+  font-size: 62.5%;
+}
+
+body{
+  color:#0d0d25;
+}
+
+h1, h3{
+  font: bold 10rem 'Playfair Display', serif;
+}
+
+h3{
+  font-size: 8rem;
+}
+
+p, li, span, button, h2, h4, h5, h6, address{
+  font: 2.5rem 'Noto Sans JP', sans-serif;
+}
+
+p{
+  font-size: 2rem;
+  line-height: 3rem;
+  padding-bottom: 3rem;
+}
+
+h2, address{
+  color: #ff8800;
+}
+
+address, .openingHours h5, .money{
+  font-family: 'Prata', serif;
+}
+
+address{
+  font-size: 4rem;
+  font-weight: normal;
+}
+
+h5{
+  font-weight: bold;
+  font-size: 2.5rem;
+}
+.customer h5{
+  font-family: 'Sora', sans-serif;
+}
+
+h6{
+  color: #ceced4;
+  font-size: 2rem;
+  padding-bottom: 3rem;
+}
+
+header{
+  background: url("https://flexxsirv.sirv.com/24f4c34dd543535d738bd5409ec3fbe8c7718e65ef/brooke-lark-08bOYnH_r_E-unsplash__1_.jpg?w=1800") no-repeat center;
+ background-size: cover;
+}
+
+.sectionFirst{
+  background: url("https://i.imgur.com/wPJUV11.png") no-repeat center;
+  background-size: cover;
+}
+
+.sectionSecond, {
+  background: #f2f6f7;
+}
+
+.sectionThird{
+  background: white url("https://i.imgur.com/REnhbaT.png") no-repeat center;
+  background-size: cover;
+}
+
+.customer{
+  background: white url("https://i.imgur.com/XPdTf81.png") no-repeat center;
+  background-size: 300px;
+}
+  /*
+  ========================================
+  SPECIFIC ITEM SIZING & LOOKS
+  ========================================
+*/
+.topNavImg, .socialIcons, .btnArrow{
+  height: 30px;
+}
+
+.socialIcons{
+  height: 25px;
+}
+
+.iconPhone{
+  height: 50px;
+}
+
+.iconStarOrange, .iconStarYellow, .arrow{
+  height: 50px;
+}
+
+.dotScroll{
+  height: 100px;
+  width: auto;
+}
+
+.customerImg{
+  border-radius: 50%;
+  padding: 2%;
+}
+
+button, input{
+  font-size: 1.5rem;
+  font-weight: 100;
+  color: white;
+  background: #ff8800;
+  border: none;
+  border-radius: 5px;
+  text-align: center;
+  padding: 1rem 3rem 1rem 3rem;
+  display: inline;
+}
+
+input{
+  background: white;
+  color: #dde8ec;
+  border: 2px solid #dde8ec;
+  text-align: left;
+  width: 70%;
+}
+
+.btnArrow{
+  height: 1.5rem;
+  margin-left: 1rem;
+  display: inline;
+}
+
+.btnDiscover{
+  padding-right: 1.5rem;
+}
+
+.menuTime{
+  padding-bottom: 1%;
+  border-bottom: 2px solid #dde8ec;
+}
+
+.logo{
+  display: block;
+  font-size: 4rem;
+  font-weight: bold;
+  font-variant: italic;
+  text-align: center;
+}
+
+  /*
+  ========================================
+  MAIN LAYOUT
+  ========================================
+*/
+header, .main{
+  padding: 5% 10%;
+  clear:both;
+  height: auto;
+  contain: content;
+}
+
+header{
+  padding-top: 2%;
+}
+
+header nav{
+  float: right;
+  clear: both;
+}
+
+header .mainText{
+  padding: 7% 0 2% 0;
+  width: 60%;
+}
+
+.mainText{
+  clear: both;
+  padding-bottom: 4rem;
+}
+.sectionFirst .contentConatiainer{
+  width:90%;
+}
+.sectionFirst {
+  padding: 5% 8% 10% 40%;
+  float: right;
+}
+
+.sectionSecond, .sectionThird, .sectionFourth{
+  text-align: center;
+}
+
+li{
+  display: inline-block;
+  padding: 0 25px;
+  text-align: center;
+}
+
+.sectionCall span, .sectionCall address{
+  display: block;
+  padding: 0 30% 2% 30%;
+}
+.iconPhone {
+  height: 100px;
+  margin: 0 40%;
+}
+
+/*
+  ========================================
+  NIGHTMARE OF SECTION TWO
+  ========================================
+*/
+div{
+  color: white;
+  font-size: 1rem;
+  display: block;
+  padding: top
+}
+div span, div img, div button{
+  display: block;
+  text-align: center;
+  padding-bottom: 3%;
+}
+div img{
+  padding: 1% 25%;
+}
+div button{
+  margin-left: 25%;
+}
+.iconStarOrange{
+  height: 30px;
+}
+
+.imgRow{
+  width: 100%;
+  height: auto;
+}
+.imgContainer{
+  height: 200px;
+  width: 200px;
+  float: left;
+  padding: 1%;
+}
+
+.menuImg{
+  width: 100%;
+  object-fit: cover;
+  padding: 0;
+  margin: 0;
+}
+
+.imgOverlay{
+  position: relative;
+  height: 200px;
+  top: -100%;
+  left: 0%;
+  padding: 1%;
+}
+.money{
+  padding-top: 100px;
+}
+
+.imgOverlay{
+  opacity: 0;
+  transition: opacity 0.5s;
+}
+
+.imgOverlay:hover{
+   opacity: 1;
+  transform: translateY(-10px);
+  background: rgba(13,13,37, .3);
+  transition: 0.5s;
+}
+
+/*
+  ========================================
+  MINI MODULE LAYOUTS
+  ========================================
+*/
+
+.social{
+  float: left;
+  padding-right: 5rem;
+}
+
+.searchButton{
+  padding: 5% 0;
+}
+.contentContainer{
+  padding: 0 20%;
+}
+.openingHours{
+  width: 50%;
+  padding: 3% 1%;
+  float: left;
+  text-align: center;
+}
+
+.arrow{
+  margin: 15%   4%;
+}
+
+.customer p{
+  padding-top: 3%;
+}
+
+/*
+  ========================================
+  INTERACTIVE
+  ========================================
+*/
+a:link, a:visited{
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover, a:active{
+  color: #ff8800;
+  transition: 0.3s;
+}
+
+button:hover, button:active{
+  background: #fcae52;
+  border: inherit;
+  transform: translateX(10px);
+  transition: transform 0.25s;
+}
+
+.menuTime:hover, .menuTime:active{
+  border-bottom: 1px solid #ff8800;
+}
+
+/*
+  ========================================
+  MEDIA QUERIES
+  ========================================
+*/
+@media (min-width: 1201px) and (max-width: 3000px){
+  .logo{
+    display: none;
+  }
+}
+
+@media (max-width: 1200px){
+  .logo{
+    display: static;
+  }
+  .topNavigation{
+    display: none;
+  }
+  .mainText, header .mainText{
+    width: 100%;
+  }
+  .sectionFirst, .sectionSecond, .sectionThird, .sectionFourth{
+    padding: 5% 8% 10% 8%;
+  }
+  .sectionCall address{
+    padding: 0 15% 2% 15%;
+  }
+  .arrow, .video{
+    display: none;
+  }
+  p{
+    font-size: 15px;
+  }
+  h1{
+    font-size: 8rem;
+  }
+  h3{
+    font-size: 5rem;
+  }
+}
+
+@media (min-width: 100px) and (max-width: 900px){
+
+  p{
+    font-size: 14px;
+  }
+}
+.footer {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 1rem;
+    background-color: #000;
+    text-align: center;
+  }
+.footer p {
+  text-decoration: none;
+  color: #fff;
+}
+.footer a {
+    text-decoration: none;
+    color: #fcae52;
+}
+.footer a:hover {
+    text-decoration: underline;
+    color: red;
+}
+      </style>
+  </head>
+  <body>
+
+
+    <header>
+      <nav>
+        <ul class="topNavigation">
+          <li><a href="">Home</a></li>
+          <li><a href="about">About Us</a></li>
+          <li><a href="menu">Menu</a></li>
+         <!-----<li><a href="#">Order Now</a></li>
+          <li><a href="#">Blog</a></li>-->
+          <li><a href="contact">Contact</a></li>
+          <li><a href="#"><img src="https://i.imgur.com/yxzVxBL.png" class="topNavImg one"></a></li>
+          </li><a href="#"><img src="https://i.imgur.com/5CJSd6J.png" class="topNavImg"></a></li>
+        </ul>
+        </nav>
+        <span class="logo"> Kilua Restaurant </span>
+        <section class="mainText">
+          <h1>
+            Welcome <br>To Our Kilua Restaurant
+          </h1>
+          <form class="searchButton" action="#">
+            <input type="text" placeholder="Search for nearby locations" name="location">
+            <button type="submit"><i class="fa fa-search">Location</i></button>
+          </form>
+          <section class="socialMedia">
+          <section class="social">
+              <img src="https://i.imgur.com/1dZyYxo.png" class="socialIcons">
+              <span>
+                252k
+              </span>
+            </section>
+            <section class="social">
+              <img src="https://i.imgur.com/pVV4LdA.png" class="socialIcons">
+              <span>
+                62k
+              </span>
+            </section>
+            <section class="social">
+              <img src="https://i.imgur.com/XaXdCzP.png" class="socialIcons">
+              <span>
+                55k
+              </span>
+            </section>
+          </section>
+        </section>
+    </header>
+
+
+
+    <main>
+      <section class="sectionFirst main">
+        <section class="contentConatiainer">
+          <section class="mainText">
+            <h2>
+              About Us
+            </h2>
+            <h3>
+              Discover Our <br>Restaurant Story
+            </h3>
+          </section>
+            <p>
+              Kilua is a team work of Kilua Restaurant Cafe, we aim at promoting the foodstuff industry through the branches. We establish and through the new dishes, and integrate between different cultes. There are some other things that we are pretty well known for. but if you want to actually find out more, then you'll have to keep reading this paragraph. Well it looks like the paragraph is going ot end soon.
+            </p>
+            <p>
+              I hope you learned something important about our business. Because it looks like we have run out of room again to tell you more properly about who we are and what we do. Maybe you'll learn if you read the other sections though!
+            </p>
+            <button class="btnDiscover">
+                Discover Menu
+              <img src="https://i.imgur.com/mdtAg35.png" class="btnArrow">
+            </button>
+        </section>
+      </section>
+
+
+
+      <section class="sectionSecond main">
+        <section class="mainText">
+          <h2>
+            Order Online Now
+          </h2>
+          <h3>
+            Our Speciality
+          </h3>
+        </section>
+        <nav class="menu">
+          <ul>
+            <li class="menuTime"><a href="#">Breakfast</a></li>
+            <li class="menuTime"><a href="#">Lunch</a></li>
+            <li class="menuTime"><a href="#">Dinner</a></li>
+            <li class="menuTime"><a href="#">Dessert</a></li>
+            <li class="menuTime"><a href="#">Shake</a></li>
+          </ul>
+
+        <section class="imgRow main">
+          <section class="imgContainer">
+            <img src="https://i.imgur.com/5hsMiPn.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$12.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Mushroom Bolognese</span>
+            <button>Order Now</button>
+          </section>
+          <section class="imgContainer">
+          <img src="https://i.imgur.com/rZrnjTc.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$10.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Bruschetta Chicken Orecchiette</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        <section class="imgContainer">
+          <img src="https://i.imgur.com/Z0s181x.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$12.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Beef and Broccoli Pasta</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        <section class="imgContainer">
+          <img src="https://i.imgur.com/GOOtEhS.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$10.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Creamy Pappardelle</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        <section class="imgContainer">
+          <img src="https://i.imgur.com/wAdICQA.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$10.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Bacon and Leek Pasta</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        <section class="imgContainer">
+          <img src="https://i.imgur.com/nEFiAQb.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$14.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Creamy Shrimp Alfredo</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        <section class="imgContainer">
+          <img src="https://i.imgur.com/ndaBb7Y.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$13.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Lemon Crab Spaghetti</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        <section class="imgContainer">
+          <img src="https://i.imgur.com/jBeLHBI.png" class="menuImg">
+          <div class="imgOverlay">
+            <span class="money">$12.00</span>
+            <img src="https://i.imgur.com/aK6bp2S.png" class="iconStarOrange">
+            <span class="name">Mushroom Bolognese</span>
+            <button>Order Now</button>
+          </div>
+        </section>
+        </section>
+      </section>
+
+
+
+      <section class="sectionThird main">
+        <section class="contentContainer">
+          <section class="mainText">
+            <h2>Book Table</h2>
+            <h3>Opening Hours</h3>
+          </section>
+          <section class="sectionCall">
+            <img src="https://i.imgur.com/87ZuSMn.png" class="iconPhone">
+            <span>
+              Call Now
+            </span>
+            <address>
+              <a href="tel:9462401080">9462401080</a>
+            </address>
+        </section>
+          <section class="openingHours">
+            <span>Monday to Tuesday</span>
+            <h5>09:00 am - 22:00 pm</h5>
+          </section>
+          <section class="openingHours">
+            <span>Friday to Sunday</span>
+            <h5>11:00 am - 20:00 pm</h5>
+          </section>
+          <section class="videoContainer">
+            <img src="https://i.imgur.com/o03jsCM.png" class="arrow">
+            <img src="https://i.imgur.com/Cm4UJUP.jpg" class="video">
+            <img src="https://i.imgur.com/nSDBrd2.png" class="arrow">
+          </section>
+        </section>
+      </section>
+
+
+
+      <section class="sectionFourth main">
+        <section class="contentConatiainer">
+          <section class="mainText">
+            <h2>
+              Testimonials
+            </h2>
+            <h3>
+              Customers Say
+            </h3>
+          </section>
+          <section class="customer">
+
+            <h5>Ms sniya</h5>
+            <h6>owner of shop</h6>
+            <img src="https://i.imgur.com/n0Euwfk.png" class="iconStarYellow">
+            <p>
+              Delicious boneless, skinless chicken breasts and fresh mushrooms in garlic and white winesauce. Kilua is a team work of Kilua Restaurant cafe, we aim at promoting the foodstuff industry through the branches, we establish and through the new dishes.
+            </p>
+            <img src="https://i.imgur.com/wjw6RHR.png" class="dotScroll">
+
+          </section>
+        </section>
+      </section>
+    </main>
+  </body>
+</html>

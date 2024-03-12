@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        :root {
+    --forkSkin: black;
+}
+
+*,
+:before,
+:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.wrapper {
+    border: 2px solid black;
+    width: 500px;
+    height: 400px;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+}
+
+.fork {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+
+.fork-handle {
+    background-color: var(--forkSkin);
+    width: 8px;
+    height: 105px;
+    border-radius: 100px;
+    transform: rotateZ(40deg);
+    position: absolute;
+    top: 50px;
+    left: 30px;
+}
+
+.fork-top {
+    background-color: var(--forkSkin);
+    width: 18px;
+    height: 35px;
+    transform: rotateZ(40deg);
+    border-radius: 0 0 20px 20px;
+    position: absolute;
+    top: 43px;
+    left: 60px;
+}
+
+.fork-top .top {
+    background-color: var(--forkSkin);
+    width: 4px;
+    height: 25px;
+    border-radius: 20px 20px 0 0;
+    position: absolute;
+    top: -20px;
+}
+
+.t2 {
+    left: 7px;
+}
+
+.t3 {
+    left: 14px;
+}
+
+.knife {
+    width: 100px;
+    height: 200px;
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translate(-50%, -50%);
+}
+
+.knife-handle {
+    background-color: var(--forkSkin);
+    width: 10px;
+    height: 105px;
+    border-radius: 100px;
+    transform: rotateZ(-40deg);
+    position: absolute;
+    top: 48px;
+    left: 30px;
+}
+
+.knife-blade {
+    background-color: var(--forkSkin);
+    width: 20px;
+    height: 75px;
+    border-radius: 60px 0 0 0;
+    transform: rotateZ(-40deg);
+    position: absolute;
+    top: 20px;
+    left: -18px;
+}
+
+.text {
+    position: absolute;
+    top: 300px;
+    left: 160px;
+}
+
+.text > h1 {
+    margin-top: 10px;
+    font-variant: small-caps;
+    letter-spacing: 15px;
+}
+        h1
+        {
+        text-align:center;
+        }
+       h3
+        {
+        margin-left:20px;
+        padding-left:100px;
+        }
+        body
+        {
+        background-color:pink;
+        }
+    </style>
+</head>
+<body>
+<br><br>
+<h1  >About Us</h1>
+<p><h3>We've been making healthy food .
+The fabric of Cutlets was born out of love and respect for these humble deli creations, <br>met with a desire to bring quality ingredients to the table. <br>Simply put, we’re here to bring you a sandwich experience you can feel good about.</h3></p>
+
+<br><br>
+<div class="wrapper">
+<br>
+<div class="fork">
+
+    <div class="fork-handle"></div>
+      <div class="fork-top">
+        <div class="top t1"></div>
+        <div class="top t2"></div>
+        <div class="top t3"></div>
+    </div>
+
+  </div>
+<br>
+  <div class="knife">
+
+    <div class="knife-handle"></div>
+    <div class="knife-blade"></div>
+
+  </div>
+  <div class="text">
+    <h1>Dinner</h1>
+  </div>
+
+</div>
+
+</body>
+
+</html>
